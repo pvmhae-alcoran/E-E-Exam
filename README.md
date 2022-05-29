@@ -6,7 +6,7 @@ the development of the **_E-E-Exam - STOPWATCH_**
 </br>
 
 # Libraries
-We used **Python 3.7.9** as our programming language, and then we used **_Tkinter_** as our main library for the stopwatch logic and GUI framework.
+We used **Python 3.7.9** as our programming language, and then we used **_Tkinter_** and **_Time_** as our main library for the stopwatch logic and GUI framework.
 </br>
 </br>
 
