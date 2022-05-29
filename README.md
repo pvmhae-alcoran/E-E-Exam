@@ -11,10 +11,10 @@ We used **Python 3.7.9** as our programming language, and then we used **_Tkinte
 </br>
 
 # Features
-The interface of the Stopwatch, as you can see, projects the present time and date to prove accurate running time of the stopwatch. What's 
-more interesting in the Stopwatch is that, when you press the **'Start'** button, it then switches to **'Stop'** and vice versa. Furthermore, when you
-press the **'Stop'** button while the time is running, the previously **'Lap'** button then switches to **'Reset'**. The features of this Stopwatch is inspired with 
-that of the ios', but, with an additional twist.
+The interface of the Stopwatch, as you can see, projects the present time and date (based on your computer) to prove accurate running time of the stopwatch. What's 
+more interesting in the Stopwatch is that, when you press the **'Start'** button, it then switches to **'Stop'** and when the **'Stop'** button is pressed,
+it switches to **'Resume'** button if you wish to resume the stopwatch. Furthermore, when you press the **'Stop'** button while the time is running, 
+the previously **'Lap'** button then switches to **'Reset'**. In simple terms, the button on the lower left has three functions, the **_Start, Stop, and Resume_** while the button on the lower right has two functions, the **_Lap and Reset_**. The features of this Stopwatch is inspired with that of the ios', but, with an additional twist.
 
 > ### Model
 
