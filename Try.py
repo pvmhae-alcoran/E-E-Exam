@@ -7,8 +7,9 @@ root.title("Stop Watch")
 root.geometry("299x350")
 root.wm_attributes("-topmost", 1)
 
+
 def clock():
-    dc= time.strftime("%d-%m-%Y, %I:%M:%S %p")
+    dc= time.strftime("%x, %I:%M:%S %p\n %A")
     label.config(text=dc)
     label.after(200,clock)
 
@@ -16,6 +17,7 @@ label = Label(root, font="Times,90", bg="SkyBlue3", fg="black")
 label .pack()
 
 clock()
+
 
 class StopWatch(Frame):  
     """ Implements a stop watch frame widget. """                                                                
@@ -74,9 +76,10 @@ class StopWatch(Frame):
 
     def Start(self):
         start_.place_forget()
-        stop_.place(x=0,y=250, width= 100, height= 30)
+        resume_.place_forget()
+        stop_.place(x=33,y=300, width= 100, height= 30)
         reset_.place_forget()
-        lap_.place(x=100,y=250, width= 100, height= 30)
+        lap_.place(x=166,y=300, width= 100, height= 30)
         if not self._running:            
             self._start = time.time() - self._elapsedtime
             self.update()
@@ -84,20 +87,32 @@ class StopWatch(Frame):
 
 
     def Stop(self):
-        stop_.place_forget()
-        start_.place(x=0,y=250, width= 100, height= 30)
         lap_.place_forget()
-        reset_.place(x=100,y=250, width= 100, height= 30)
+        reset_.place(x=166,y=300, width= 100, height= 30)
         if self._running:
             self.after_cancel(self._timer)            
             self._elapsedtime = time.time() - self._start    
             self._setTime(self._elapsedtime)
             self._running = 0
+        stop_.place_forget()
+        resume_.place(x=33,y=300, width= 100, height= 30)
+            
+    def Resume(self):
+        resume_.place_forget()
+        stop_.place(x=33,y=300, width= 100, height= 30)
+        reset_.place_forget()
+        lap_.place(x=166,y=300, width= 100, height= 30)
+        if not self._running:            
+            self._start = time.time() - self._elapsedtime
+            self.update()
+            self._running = 1            
 
 
     def Reset(self):
         reset_.place_forget()
-        lap_.place(x=100,y=250, width= 100, height= 30)
+        resume_.place_forget()
+        start_.place(x=33,y=300, width= 100, height= 30)
+        lap_.place(x=166,y=300, width= 100, height= 30)
         self.after_cancel(self._timer)  
         self._elapsedtime = 0.0
         self.laps = []
@@ -123,10 +138,10 @@ start_ = Button(root, text='Start', command=sw.Start, font=("Times 15"),bg=("#39
 lap_ = Button(root, text='Lap', command=sw.Lap, font=("Times 15"),bg=("silver"))
 stop_ = Button(root, text='Stop', command=sw.Stop, font=("Times 15"),bg=("#ff0f0f"))
 reset_ = Button(root, text='Reset', command=sw.Reset, font=("Times 15"),bg=("silver"))
-    
+resume_ = Button(root, text='Resume', command=sw.Start, font=("Times 15"),bg=("#39FF14"))    
 
-start_.place(x=0,y=250, width= 100, height= 30)
-lap_.place(x=100,y=250, width= 100, height= 30)
+start_.place(x=33,y=300, width= 100, height= 30)
+lap_.place(x=166,y=300, width= 100, height= 30)
 
 
 root.mainloop()
