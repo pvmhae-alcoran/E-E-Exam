@@ -7,6 +7,15 @@ root.title("Stop Watch")
 root.geometry("299x350")
 root.wm_attributes("-topmost", 1)
 
+def clock():
+    dc= time.strftime("%d-%m-%Y, %I:%M:%S %p")
+    label.config(text=dc)
+    label.after(200,clock)
+
+label = Label(root, font="Times,90", bg="SkyBlue3", fg="black")
+label .pack()
+
+clock()
 
 class StopWatch(Frame):  
     """ Implements a stop watch frame widget. """                                                                
