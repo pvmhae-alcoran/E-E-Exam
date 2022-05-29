@@ -19,7 +19,7 @@ the previously **'Lap'** button then switches to **'Reset'**. In simple terms, t
 > ### Model
 ![282275424_751448842661050_5791699650261914123_n](https://user-images.githubusercontent.com/105404849/170876771-d6edbc7d-e33c-4d93-8263-95eedf636b09.png)
 
-Note: As you can see, we have a background image and an icon of a clock in the title. We have also made sure that you can add the images/icons of your choice!
+**Note:** As you can see, we have a background image and an icon of a clock in the title. We have also made sure that you can add the images/icons of your choice!
 Read the `requirements.txt` for instructions on how to add the icons/images of your choice!
 </br>
 </br>
