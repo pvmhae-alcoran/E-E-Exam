@@ -4,7 +4,7 @@ import time
 
 root = Tk()
 root.title("Stop Watch")
-root.geometry("200x300")
+root.geometry("299x350")
 root.wm_attributes("-topmost", 1)
 
 
