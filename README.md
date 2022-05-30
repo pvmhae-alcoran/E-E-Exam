@@ -40,7 +40,7 @@ the previously **'Lap'** button then switches to **'Reset'**. In simple terms, t
 
 ### NOTE!
 To experience how magical our stopwatch is, you can run the code using our `stopwatch.py`
-To further understand on how to navigate the stopwatch, you may watch our recorded discussion here ->
+To further understand on how to navigate the stopwatch, you may watch our recorded discussion here -> [TEAM D'PED's Stopwatch](https://drive.google.com/file/d/1NUK1hwF4vn4MBHiSyAXUEerzrzFnlf3C/view?usp=sharing)
 </br>
 </br>
 
