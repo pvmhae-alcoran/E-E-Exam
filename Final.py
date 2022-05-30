@@ -6,6 +6,7 @@ root = Tk()
 root.title("Stop Watch")
 root.geometry("299x350")
 root.wm_attributes("-topmost", 1)
+root.config(bg="#fec8d8")
 
 
 #time and date
@@ -14,9 +15,9 @@ def clock():
     label.config(text=dc)
     label.after(200,clock)
 
-
-label = Label(root, font="Times,90", bg="SkyBlue3", fg="black")
+label = Label(root, font="Times 17 bold", bg="#fec8d8", fg="#957dad")
 label .pack()
+
 clock()
 
 
@@ -40,29 +41,26 @@ class StopWatch(Frame):
 
     def makeWidgets(self):                         
         #timer
-        l = Label(self, textvariable=self.timestr,font=("Times 40 bold"),bg= "white")
+        l = Label(self, textvariable=self.timestr,font=("system 30"),bg= "white")
         self._setTime(self._elapsedtime)
         l.pack(fill=X, expand=NO, pady=3, padx=2)
-        #laps
-        l2 = Label(self, text='---laps---', font=("Times 20 bold"),bg="sky blue")
+        #label
+        l2 = Label(self, text='---laps---', font=("Fixedsys 16 bold"),bg="#957dad", fg = "white")
         l2.pack(fill=X, expand=NO, pady=4, padx=2)
         #scrollbar
         scrollbar = Scrollbar(self, orient=VERTICAL)
-        self.m = Listbox(self,selectmode=EXTENDED, font=("Times 15"), height = 5,
+        self.m = Listbox(self,selectmode=EXTENDED, font=("Courier 13"), height = 6,
                          yscrollcommand=scrollbar.set)
         self.m.pack(side=LEFT, fill=BOTH, expand=1, pady=5, padx=2)
         scrollbar.config(command=self.m.yview)
         scrollbar.pack(side=RIGHT, fill=Y)
 
 
-    #makes the timer work
     def update(self):
-
 
         self._elapsedtime = time.time() - self._start
         self._setTime(self._elapsedtime)
         self._timer = self.after(50, self.update)
-
 
     def _setTime(self, elap):
         minutes = int(elap/60)
@@ -77,7 +75,6 @@ class StopWatch(Frame):
         seconds = int(elap - minutes*60.0)
         milliseconds = int((elap - minutes*60.0 - seconds)*100)            
         return '%02d:%02d:%02d' % (minutes, seconds, milliseconds)
-
 
     #buttons
     def Start(self):
@@ -141,11 +138,11 @@ sw = StopWatch(root)
 sw.pack(side=TOP)
 
 
-start_ = Button(root, text='Start', command=sw.Start, font=("Times 15"),bg=("#39FF14"))
-lap_ = Button(root, text='Lap', command=sw.Lap, font=("Times 15"),bg=("silver"))
-stop_ = Button(root, text='Stop', command=sw.Stop, font=("Times 15"),bg=("#ff0f0f"))
-reset_ = Button(root, text='Reset', command=sw.Reset, font=("Times 15"),bg=("silver"))
-resume_ = Button(root, text='Resume', command=sw.Start, font=("Times 15"),bg=("#39FF14"))
+start_ = Button(root, text='Start', command=sw.Start, font=("Times 15"),bg=("#94d291"))
+lap_ = Button(root, text='Lap', command=sw.Lap, font=("Times 15"),bg=("#d291bc"))
+stop_ = Button(root, text='Stop', command=sw.Stop, font=("Times 15"),bg=("#e14b32"))
+reset_ = Button(root, text='Reset', command=sw.Reset, font=("Times 15"),bg=("#d291bc"))
+resume_ = Button(root, text='Resume', command=sw.Start, font=("Times 15"),bg=("#94d291"))
     
 
 start_.place(x=33,y=300, width= 100, height= 30)
